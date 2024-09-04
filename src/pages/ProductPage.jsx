@@ -30,8 +30,8 @@ const ProductPage = () => {
               className="w-full h-40 object-contain mb-4"
             />
             <h2 className="text-md font-semibold mb-2">{product.title}</h2>
-            <p className="text-gray-600 mb-2">{product.price} SEK</p>
-            <p className="text-gray-500 text-sm">{product.description}</p>
+            <p className="text-gray-700 mb-2">{product.price} $</p>
+            <p className="text-gray-600 text-sm">{product.description}</p>
           </div>
         ))}
       </div>
