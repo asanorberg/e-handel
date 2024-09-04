@@ -1,10 +1,10 @@
-import ProductPage from "./pages/ProductPage";
+import HomePage from "./pages/HomePage";
 import "./App.css";
 
 const App = () => {
   return (
     <div>
-      <ProductPage />
+      <HomePage />
     </div>
   );
 };
