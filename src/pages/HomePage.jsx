@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
+import ProductCard from "../components/ProductCard";
 
 const HomePage = () => {
+  // State for the fetched products
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     async function getData() {
       try {
+        // This fetches all 20 products from the API
         const data = await fetch("https://fakestoreapi.com/products");
         const response = await data.json();
         setProducts(response);
@@ -17,24 +20,13 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="bg- bg-white py-12 px-4 sm:px-8 lg:px-16">
+    <div className="bg-white py-12 px-4 sm:px-8 lg:px-16">
+      {/* Grid container for product cards */}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Mapping over products and rendering a ProductCard for each */}
         {products.map((product) => (
-          <div
-            key={product.id}
-            className="border p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-          >
-            <img
-              src={product.image}
-              alt={product.title}
-              className="w-full h-40 object-contain mb-4"
-            />
-            <h2 className="text-gray-700 text-md font-semibold mb-2">
-              {product.title}
-            </h2>
-            <p className="text-gray-700 mb-2">{product.price} $</p>
-            <p className="text-gray-600 text-sm">{product.description}</p>
-          </div>
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>
