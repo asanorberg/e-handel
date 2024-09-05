@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 const ProductPage = () => {
-  // const { id } = useParams(); //hämta id från URL
+  const { id } = useParams(); //hämta id från URL
   //test
-  const id = 1; // Hardcoded ID for testing
+  // const id = 1; // Hardcoded ID for testing
   const [product, setProduct] = useState(null);
-  //   const [loading, setLoading] = true;
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
@@ -17,10 +16,8 @@ const ProductPage = () => {
         const productData = await response.json();
         setProduct(productData);
         console.log(productData);
-        // setLoading(false);
       } catch (error) {
         console.error("Product fetch failed");
-        // setLoading(false);
       }
     };
     fetchProduct();
@@ -28,7 +25,6 @@ const ProductPage = () => {
 
   return product ? (
     <div className="flex flex-col md:flex-row w-full text-black p-10 bg-teal-500">
-      {/* Image Container */}
       <div className="flex justify-center md:w-1/2 px-4 mb-8 md:mb-0 bg-pink-400">
         <img
           className="w-[300px] h-[300px] object-cover" // Fixed size for image
@@ -37,7 +33,6 @@ const ProductPage = () => {
         />
       </div>
 
-      {/* Product Details Container */}
       <div className="flex flex-col bg-white p-4">
         <h1 className="mb-2 font-heading text-3xl">{product.title}</h1>
         <h3 className="text-lg font-bold">${product.price}</h3>
@@ -50,9 +45,8 @@ const ProductPage = () => {
           Rating: {product.rating.rate} ({product.rating.count} reviews)
         </div>
 
-        {/* Quantity and Add to Cart */}
         <div className="flex flex-wrap items-center gap-2 mb-6">
-          <div className="flex items-center font-bold text-gray-500 border border-gray-300 rounded-lg">
+          <div className="flex py-2 items-center font-bold text-gray-500 border border-gray-300 rounded-lg">
             <button className="h-full px-4 hover:bg-gray-100 focus:outline-none">
               -
             </button>
