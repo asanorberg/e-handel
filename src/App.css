@@ -1,3 +1,98 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+}
+
+/*Header*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: white;
+  position: relative;
+  width: 100%;
+  top: 0;
+}
+
+.imglogo {
+  width: 100px;
+}
+.logo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  margin: 0 1rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+
+.header-icons .icon {
+  margin-left: 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+.header-icons .icon i {
+  font-size: 1.2rem;
+}
+/*Header*/
+
+.contact {
+  width: 1450px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  padding: 0px;
+}
+
+@media (max-width: 1200px) {
+  .contact {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    max-width: 100%;
+    padding: 10px;
+    padding: 20px; /* Säkerställ att det inte finns någon extra margin som flyttar headern */
+    margin: 0;
+    display: block;
+  }
+}
