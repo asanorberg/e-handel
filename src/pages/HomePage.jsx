@@ -6,18 +6,24 @@ const HomePage = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    async function getData() {
+    const getData = async () => {
       try {
-        // This fetches all 20 products from the API
-        const data = await fetch("https://fakestoreapi.com/products");
-        const response = await data.json();
-        setProducts(response);
+        const fetchedProducts = await fetchProducts();
+        setProducts(fetchedProducts);
       } catch (error) {
-        console.log("error fetching products", error);
+        console.error("Error fetching products:", error);
       }
-    }
+    };
+
     getData();
   }, []);
+
+  const addToCart = (product) => {
+    setCart([...cart, product]);
+    {
+      navigate("/cart");
+    }
+  };
 
   return (
     <div className="bg-white py-12 px-4 sm:px-8 lg:px-16">
@@ -26,7 +32,11 @@ const HomePage = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Mapping over products and rendering a ProductCard for each */}
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard
+            key={product.id}
+            product={product}
+            addToCart={addToCart}
+          />
         ))}
       </div>
     </div>
