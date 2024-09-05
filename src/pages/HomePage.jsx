@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "../components/ProductCard";
+import { fetchProducts } from "../services/productService";
 
 const HomePage = () => {
   // State for the fetched products
