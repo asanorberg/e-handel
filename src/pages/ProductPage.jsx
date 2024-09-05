@@ -23,6 +23,21 @@ const ProductPage = () => {
     fetchProduct();
   }, [id]);
 
+  const plusQuantity = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const minusQuantity = () => {
+    setQuantity((prevQuantity) => prevQuantity - 1);
+  };
+
+  const handleInputChange = (e) => {
+    const value = parseInt(e.target.value, 10);
+    if (value >= 1) {
+      setQuantity(value);
+    }
+  };
+
   return product ? (
     <div className="flex flex-col md:flex-row w-full text-black p-10 bg-teal-500">
       <div className="flex justify-center md:w-1/2 px-4 mb-8 md:mb-0 bg-pink-400">
@@ -47,16 +62,22 @@ const ProductPage = () => {
 
         <div className="flex flex-wrap items-center gap-2 mb-6">
           <div className="flex py-2 items-center font-bold text-gray-500 border border-gray-300 rounded-lg">
-            <button className="h-full px-4 hover:bg-gray-100 focus:outline-none">
+            <button
+              onClick={minusQuantity}
+              className="h-full px-4 hover:bg-gray-100 focus:outline-none"
+            >
               -
             </button>
             <input
               className="w-9 text-center bg-transparent border-0 focus:ring-transparent focus:outline-none"
               type="numeric"
               value={quantity}
-              onChange={(e) => setQuantity(e.target.value)}
+              onChange={handleInputChange}
             />
-            <button className="h-full px-4 hover:bg-gray-100 focus:outline-none">
+            <button
+              onClick={plusQuantity}
+              className="h-full px-4 hover:bg-gray-100 focus:outline-none"
+            >
               +
             </button>
           </div>
