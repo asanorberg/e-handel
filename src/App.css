@@ -68,11 +68,8 @@ header {
 /*Header*/
 
 .contact {
-  width: 1450px;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-  padding: 0px;
+  width: 100%;
+  max-width: 1450px;
 }
 
 @media (max-width: 1200px) {
