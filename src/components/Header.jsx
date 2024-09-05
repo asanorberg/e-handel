@@ -26,7 +26,7 @@ const Header = () => {
         <a href="/search" className="icon">
           <i className="fas fa-search"></i>
         </a>
-        <a href="/cart" className="icon">
+        <a href="/CartItem" className="icon">
           <i className="fas fa-shopping-cart"></i>
         </a>
         <a href="/profile" className="icon">
