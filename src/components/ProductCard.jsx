@@ -1,6 +1,7 @@
 // Presentational Component for individual product cards
 // ProductCard.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   //limit the title of the products to no more than 3 words
@@ -19,6 +20,7 @@ const ProductCard = ({ product }) => {
         {limitedTitle}
       </h2>
       <p className="text-gray-700 mb-2">${product.price}</p>
+      <Link to={`/product/${product.id}`}>View Details</Link>
     </div>
   );
 };

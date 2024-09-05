@@ -27,36 +27,49 @@ const ProductPage = () => {
   }, [id]);
 
   return product ? (
-    <div className="flex w-full text-black">
-      <div className="flex flex-col w-full md:w-1/2 px-4 mb-8 md:mb-0">
-        {" "}
-        <img className="w-[200px]" src={product.image} alt={product.title} />
+    <div className="flex flex-col md:flex-row w-full text-black p-10 bg-teal-500">
+      {/* Image Container */}
+      <div className="flex justify-center md:w-1/2 px-4 mb-8 md:mb-0 bg-pink-400">
+        <img
+          className="w-[300px] h-[300px] object-cover" // Fixed size for image
+          src={product.image}
+          alt={product.title}
+        />
       </div>
-      <div className="flex-col bg-white">
-        <h1 className="mb-2 font-heading text-3xl">{product.title}</h1>
-        <h3>${product.price}</h3>
 
-        <p className="text-gray-700 text-lg">{product.description}</p>
-        <div>Category: {product.category}</div>
-        <div>
+      {/* Product Details Container */}
+      <div className="flex flex-col bg-white p-4">
+        <h1 className="mb-2 font-heading text-3xl">{product.title}</h1>
+        <h3 className="text-lg font-bold">${product.price}</h3>
+
+        <p className="text-gray-700 text-lg mb-4">{product.description}</p>
+        <div className="text-sm text-gray-600 mb-2">
+          Category: {product.category}
+        </div>
+        <div className="text-sm text-gray-600 mb-6">
           Rating: {product.rating.rate} ({product.rating.count} reviews)
         </div>
-        <div class="flex flex-wrap mb-6 items-center gap-2">
-          <div class="flex flex-0">
-            <div className="inline-flex items-center font-bold text-gray-500 input-bg border border-gray-300 overflow-hidden input-rounding">
-              <button className="h-full px-4 input-bg hover:text-body hover:bg-gray-100 focus:outline-none">
-                -
-              </button>
-              <input
-                class="w-9 m-0 button-py text-center bg-transparent text-body border-0 focus:ring-transparent focus:outline-none"
-                type="numeric"
-                placeholder="1"
-              />
-              <button className="h-full px-4 input-bg hover:text-body hover:bg-gray-100 focus:outline-none">
-                +
-              </button>
-            </div>
+
+        {/* Quantity and Add to Cart */}
+        <div className="flex flex-wrap items-center gap-2 mb-6">
+          <div className="flex items-center font-bold text-gray-500 border border-gray-300 rounded-lg">
+            <button className="h-full px-4 hover:bg-gray-100 focus:outline-none">
+              -
+            </button>
+            <input
+              className="w-9 text-center bg-transparent border-0 focus:ring-transparent focus:outline-none"
+              type="numeric"
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
+            />
+            <button className="h-full px-4 hover:bg-gray-100 focus:outline-none">
+              +
+            </button>
           </div>
+
+          <button className="w-full md:w-auto bg-green-800 text-white px-4 py-2 rounded-lg hover:bg-green-700">
+            Add to cart
+          </button>
         </div>
       </div>
     </div>
