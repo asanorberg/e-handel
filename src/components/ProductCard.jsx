@@ -12,7 +12,6 @@ const ProductCard = ({ product }) => (
       {product.title}
     </h2>
     <p className="text-gray-700 mb-2">${product.price}</p>
-    <p className="text-gray-600 text-sm">{product.description}</p>
   </div>
 );
 
