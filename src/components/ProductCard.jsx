@@ -1,9 +1,10 @@
 // Presentational Component for individual product cards
-
+// ProductCard.jsx
 import React from "react";
 
 const ProductCard = ({ product }) => {
   //limit the title of the products to no more than 3 words
+  //split title string into 3 words and joining back to a string
 
   const limitedTitle = product.title.split(" ").slice(0, 3).join(" ");
 
