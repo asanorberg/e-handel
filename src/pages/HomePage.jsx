@@ -24,11 +24,7 @@ const HomePage = () => {
 
   const addToCart = (product) => {
     setCart([...cart, product]);
-    if (
-      window.confirm(
-        "Product added to cart! Do you want to go to the cart now?"
-      )
-    ) {
+    {
       navigate("/cart");
     }
   };
