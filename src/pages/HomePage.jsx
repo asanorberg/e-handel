@@ -1,24 +1,20 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "../components/ProductCard";
-import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   // State for the fetched products
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
-    async function getData() {
+    const getData = async () => {
       try {
-        // This fetches all 20 products from the API
-        const data = await fetch("https://fakestoreapi.com/products");
-        const response = await data.json();
-        setProducts(response);
+        const fetchedProducts = await fetchProducts();
+        setProducts(fetchedProducts);
       } catch (error) {
-        console.log("error fetching products", error);
+        console.error("Error fetching products:", error);
       }
-    }
+    };
+
     getData();
   }, []);
 
