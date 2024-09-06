@@ -5,7 +5,7 @@ const CartItem = ({ closeModal }) => {
   const { cart } = useCart(); // Hämta varukorgen
 
   const handleCheckout = () => {
-    window.location.href = "/checkout"; // Gå till checkout-sidan
+    window.location.href = "/CartPage"; // Gå till checkout-sidan
   };
 
   const handleContinueShopping = () => {
