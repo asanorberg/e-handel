@@ -1,11 +1,13 @@
 import React from "react";
 import { useCart } from "../contexts/CartContext";
+import { useNavigate } from "react-router-dom"; // Importera useNavigate
 
 const CartItem = ({ closeModal }) => {
   const { cart } = useCart(); // Hämta varukorgen
+  const navigate = useNavigate(); // Hämta navigate-funktionen för navigering
 
   const handleCheckout = () => {
-    window.location.href = "/CartPage"; // Gå till checkout-sidan
+    navigate("/CartPage"); // Navigera till checkout-sidan
   };
 
   const handleContinueShopping = () => {

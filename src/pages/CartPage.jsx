@@ -1,12 +1,12 @@
 import React, { useState } from "react";
+import { useCart } from "../contexts/CartContext";
+
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([
-    { id: 1, name: "Product 1", price: 100, quantity: 1 },
-    { id: 2, name: "Product 2", price: 50, quantity: 2 },
-  ]);
+ const { cart } = useCart();
 
-  const [form, setForm] = useState({
+ console.log("Cart items:", cart); 
+ const [form, setForm] = useState({
     fullName: "",
     address: "",
     city: "",
@@ -15,7 +15,7 @@ const Cart = () => {
     paymentMethod: "credit-card",
   });
 
-  const totalCost = cartItems.reduce(
+  const totalCost = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
@@ -40,7 +40,7 @@ const Cart = () => {
         <div>
           <h2 className="text-xl font-semibold mb-4">Your Cart</h2>
           <div className="bg-white shadow rounded-lg p-4">
-            {cartItems.map((item) => (
+            {cart.map((item) => (
               <div key={item.id} className="flex justify-between mb-4">
                 <span>{item.name}</span>
                 <span>
