@@ -1,24 +1,40 @@
 import React from "react";
+import { useCart } from "../contexts/CartContext";
 
 const CartItem = ({ closeModal }) => {
+  const { cart } = useCart(); // Hämta varukorgen
+
   const handleCheckout = () => {
-    window.location.href = "/Cart";
+    window.location.href = "/checkout"; // Gå till checkout-sidan
   };
 
   const handleContinueShopping = () => {
-    closeModal(); // Stäng modalen och fortsätt handla
+    closeModal(); // Stäng modalen
   };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white p-6 rounded-lg w-full max-w-md shadow-lg relative">
         <h2 className="text-2xl font-bold mb-4">Your Cart</h2>
-        {/* Här kan du lägga till en lista över varor användaren har valt */}
         <div className="cart-items mb-6">
-          <p className="text-gray-700">Product 1</p>
-          <p className="text-gray-700">Product 2</p>
-          {/* Lägg till fler produkter här */}
+          {cart.length === 0 ? (
+            <p className="text-gray-700">Your cart is empty</p>
+          ) : (
+            cart.map((item, index) => (
+              <div
+                key={index}
+                className="flex justify-between items-center mb-4"
+              >
+                <div>
+                  <p className="text-gray-700 font-bold">{item.title}</p>
+                  <p className="text-gray-600">Quantity: {item.quantity}</p>
+                </div>
+                <p className="text-gray-700">${item.price * item.quantity}</p>
+              </div>
+            ))
+          )}
         </div>
+
         <div className="flex justify-between">
           <button
             onClick={handleContinueShopping}
