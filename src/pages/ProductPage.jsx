@@ -4,9 +4,9 @@ import { useCart } from "../contexts/CartContext";
 import CartItem from "../components/CartItem"; // Importera modalen
 
 const ProductPage = () => {
-  const { id } = useParams(); //useParams hook för att hämta id från URL
-
-  const { id } = useParams();
+  const { id } = useParams(); //hämta id från URL
+  //test
+  // const id = 1; // Hardcoded ID for testing
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false); // State för modalen
@@ -35,10 +35,10 @@ const ProductPage = () => {
   };
 
   return product ? (
-    <div className="flex flex-col md:flex-row w-full text-black p-10">
-      <div className="flex justify-center md:w-1/2 px-4 mb-8 md:mb-0">
+    <div className="flex flex-col md:flex-row w-full text-black p-10 items-center">
+      <div className="flex justify-center min-w-[300px] mr- w-[340px] px-4 mb-8 md:mb-0x">
         <img
-          className="w-[300px] h-[300px] object-cover"
+          className="w-full object-cover"
           src={product.image}
           alt={product.title}
         />
