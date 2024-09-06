@@ -10,7 +10,6 @@ import ProductPage from "./pages/ProductPage";
 import { CartProvider } from "./contexts/CartContext";
 import CartItem from "./components/CartItem";
 
-
 const App = () => {
   return (
     <CartProvider>
