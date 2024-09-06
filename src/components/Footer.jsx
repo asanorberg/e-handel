@@ -7,26 +7,27 @@ const Footer = () => {
         <div className="flex flex-wrap justify-between">
           <div className="w-full lg:w-1/3 mb-10 lg:mb-0 px-4">
             <p className="leading-6 mb-6 text-white opacity-70">
-              Vi är din butik online för exklusiva kläder, smycken och skor som
-              kommer att lyfta din stil till nästa nivå. Vårt sortiment består
-              av noggrant utvalda plagg och accessoarer, var och en med en unik
-              design och karaktär. Oavsett om du är en modeentusiast eller bara
-              letar efter något nytt, så är vårt mål att erbjuda dig produkter
-              av högsta kvalitet. Vi tror på att skapa en garderob som
-              reflekterar din personlighet och förhöjer din vardag. Utforska
-              vårt sortiment och låt dig inspireras av den fantastiska världen
-              av mode och accessoarer som vi har att erbjuda!
+              We are your online store for exclusive clothing, jewelry, and
+              shoes that will elevate your style to the next level. Our
+              collection consists of carefully selected garments and
+              accessories, each with a unique design and character. Whether
+              you're a fashion enthusiast or simply looking for something new,
+              our goal is to offer you products of the highest quality. We
+              believe in creating a wardrobe that reflects your personality and
+              enhances your everyday life. Explore our range and let yourself be
+              inspired by the amazing world of fashion and accessories that we
+              have to offer!
             </p>
           </div>
           <div className="w-full lg:w-1/3 lg:pl-24 px-4 mb-10 lg:mb-0">
-            <h5 className="text-lg font-bold mb-5 text-white">Läs mer</h5>
+            <h5 className="text-lg font-bold mb-5 text-white">Read more</h5>
             <ul className="opacity-70">
               <li className="mb-2">
                 <a
                   href="#"
                   className="inline-block text-white hover:text-gray-200"
                 >
-                  Köpvillkor
+                  Terms of purchase
                 </a>
               </li>
               <li className="mb-2">
@@ -34,7 +35,7 @@ const Footer = () => {
                   href="/contact"
                   className="inline-block text-white hover:text-gray-200"
                 >
-                  Kontakt
+                  Contact
                 </a>
               </li>
               <li className="mb-2">
@@ -42,7 +43,7 @@ const Footer = () => {
                   href="#"
                   className="inline-block text-white hover:text-gray-200"
                 >
-                  Om oss
+                  About us{" "}
                 </a>
               </li>
               <li className="mb-2">
@@ -50,7 +51,7 @@ const Footer = () => {
                   href="#"
                   className="inline-block text-white hover:text-gray-200"
                 >
-                  Omdömen från våra kunder
+                  Customer Reviews
                 </a>
               </li>
               <li className="mb-2">
@@ -58,24 +59,25 @@ const Footer = () => {
                   href="#"
                   className="inline-block text-white hover:text-gray-200"
                 >
-                  Kundtjänst
+                  Customer Service
                 </a>
               </li>
             </ul>
           </div>
           <div className="w-full lg:w-1/3 px-4">
             <h5 className="text-lg font-bold mb-5 text-white">
-              Prenumerera på vårt nyhetsbrev och få 15% rabatt
+              Subscribe to our newsletter and get 15% off
             </h5>
             <form action="">
               <div className="flex items-center pl-3 pr-2 py-2 bg-white rounded-sm">
                 <input
                   type="text"
                   className="w-full px-2 inline-block bg-transparent border-none text-base outline-none text-black"
-                  placeholder="Ange din e-post"
+                  placeholder="Enter your email
+                  "
                 />
                 <button className="ml-auto inline-block px-3 py-2 bg-black hover:opacity-90 text-white font-bold transition duration-200 button-rounding">
-                  Prenumerera
+                  Subscribe
                 </button>
               </div>
             </form>
