@@ -2,7 +2,7 @@ import React from "react";
 
 const CartItem = ({ closeModal }) => {
   const handleCheckout = () => {
-    window.location.href = "/checkout";
+    window.location.href = "/Cart";
   };
 
   const handleContinueShopping = () => {
