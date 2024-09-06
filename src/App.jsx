@@ -7,6 +7,8 @@ import Header from "./components/Header";
 import Layout from "./components/layout/Layout";
 import CartPage from "./pages/CartPage";
 import ProductPage from "./pages/ProductPage";
+import { CartProvider } from "./contexts/CartContext";
+import CartItem from "./components/CartItem";
 
 const App = () => {
   return (
