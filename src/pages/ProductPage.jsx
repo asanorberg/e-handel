@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 const ProductPage = () => {
-  const { id } = useParams(); //hämta id från URL
-  //test
-  // const id = 1; // Hardcoded ID for testing
+  const { id } = useParams(); //useParams hook för att hämta id från URL
+
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
 
@@ -39,8 +38,8 @@ const ProductPage = () => {
   };
 
   return product ? (
-    <div className="flex flex-col md:flex-row w-full text-black p-10 bg-teal-500">
-      <div className="flex justify-center md:w-1/2 px-4 mb-8 md:mb-0 bg-pink-400">
+    <div className="flex flex-col md:flex-row w-full text-black p-10">
+      <div className="flex justify-center md:w-1/2 px-4 mb-8 md:mb-0">
         <img
           className="w-[300px] h-[300px] object-cover" // Fixed size for image
           src={product.image}
