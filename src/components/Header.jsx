@@ -25,7 +25,7 @@ const Header = () => {
               Home
             </a>
           </li>
-          
+
           <li>
             <a href="/contact" className="hover:text-gray-400">
               Contact
