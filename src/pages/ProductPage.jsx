@@ -64,7 +64,7 @@ const ProductPage = () => {
             </button>
             <input
               className="w-9 text-center bg-transparent border-0 focus:ring-transparent focus:outline-none"
-              type="number"
+              type="numeric"
               value={quantity}
               onChange={(e) => setQuantity(Number(e.target.value))}
             />
