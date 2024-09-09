@@ -1,17 +1,19 @@
 import React from "react";
 import { useCart } from "../contexts/CartContext";
-import { useNavigate } from "react-router-dom"; // Importera useNavigate
+import { useNavigate } from "react-router-dom"; 
 
 const CartItem = ({ closeModal }) => {
   const { cart } = useCart(); // Hämta varukorgen
   const navigate = useNavigate(); // Hämta navigate-funktionen för navigering
 
   const handleCheckout = () => {
-    navigate("/CartPage"); // Navigera till checkout-sidan
+    closeModal();
+    navigate("/CartPage"); 
   };
 
   const handleContinueShopping = () => {
-    closeModal(); // Stäng modalen
+    closeModal(); 
+    navigate("/");
   };
 
   return (
@@ -22,9 +24,10 @@ const CartItem = ({ closeModal }) => {
           {cart.length === 0 ? (
             <p className="text-gray-700">Your cart is empty</p>
           ) : (
-            cart.map((item, index) => (
+            cart.map((item) => (
+              
               <div
-                key={index}
+                key={item.id}
                 className="flex justify-between items-center mb-4"
               >
                 <div>

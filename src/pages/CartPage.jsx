@@ -4,7 +4,6 @@ import { useCart } from "../contexts/CartContext";
 const Cart = () => {
   const { cart } = useCart();
 
-  console.log("Cart items:", cart);
   const [form, setForm] = useState({
     fullName: "",
     address: "",
@@ -25,8 +24,7 @@ const Cart = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle order and payment here
-    console.log("Order placed:", form, cart);
+    
     alert("Order placed successfully!");
   };
 

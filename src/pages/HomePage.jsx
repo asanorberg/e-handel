@@ -21,9 +21,6 @@ const HomePage = () => {
 
   const addToCart = (product) => {
     setCart([...cart, product]);
-    {
-      navigate("/cart");
-    }
   };
 
   return (
